@@ -37,6 +37,7 @@ The default triggers are `KEKW` will type 1 word of the story to chat --> gets a
 * `git clone https://github.com/HumAnTarg3t/KEKWChatterBot`
 * `cd KEKWChatterBot`
 * `npm install`
+* Rename your `.env_temp` to `.env`
  
 ## How to use
 `Node app` in the terminal.
