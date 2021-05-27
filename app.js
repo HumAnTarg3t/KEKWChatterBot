@@ -11,7 +11,7 @@ const client = new tmi.Client({
     username: process.env.userName,
     password: process.env.passWord,
   },
-  channels: ["burn"],
+  channels: ["channel here"],
 });
 
 client.connect();
