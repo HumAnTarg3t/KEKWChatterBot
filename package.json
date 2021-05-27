@@ -1,5 +1,5 @@
 {
-  "name": "twitchchatter",
+  "name": "KEKWChatterBot",
   "version": "1.0.0",
   "description": "Chatter\u001f bot",
   "main": "app.js",
@@ -16,7 +16,6 @@
   "license": "MIT",
   "dependencies": {
     "dotenv": "^10.0.0",
-    "node-fetch": "^2.6.1",
     "tmi.js": "^1.8.3"
   },
   "devDependencies": {
