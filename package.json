@@ -4,7 +4,7 @@
   "description": "Chatter\u001f bot",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon"
   },
   "keywords": [
     "twitch",
@@ -13,5 +13,13 @@
     "story"
   ],
   "author": "HumAnTarg3t",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "node-fetch": "^2.6.1",
+    "tmi.js": "^1.8.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
 }
