@@ -5,10 +5,10 @@
 ## Table of contents
 * [General info](#general-info)
 * [Technologies](#technologies)
-* [Prerequisite](#Prerequisite)
 * [Installation](#Installation)
 * [How to use](#How-to-use)
 * [Features](#features)
+* [Issues](#issues)
 * [Status](#status)
 * [Inspiration](#inspiration)
 * [Contact](#contact)
