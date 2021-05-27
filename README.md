@@ -19,11 +19,11 @@ Get your own `userName` and `passWord=oauth` and paste it in the `.env`
 
 Right now you can only tell a story to 1 chat at the sametime.
 If your storytelling gets interupted, don't worry!
-The word count is saved in a separate `wordCount.txt` that will create itself and update itself.
+The word count is saved in a separate `wordCount.txt` that will create itself and update itself. BUT REMEMBER TO UPDATE THE APP WITH THE CURRENT NUBMER AFTER CLOSING THE APP
 
 If you want to change the story --> Paste it in the `story.js`, be sure that the story is inside the   --> `` <--(backticks)
 
-The default triggers are `KEKW` will type 1 word of the story to chat --> gets a timeout for a random amount of time(from 2 sec to 15) and a word block --> when someone types `LUL` then the story can resume from the start `KEKW`
+The default triggers are `KEKW` will type 1 word of the story to chat --> gets a timeout for 30 sec and a word block --> when someone types `LUL` then the story can resume from the start `KEKW`
 
 ## Technologies
 * JavaScript 

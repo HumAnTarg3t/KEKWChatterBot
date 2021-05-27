@@ -11,16 +11,20 @@ const client = new tmi.Client({
     username: process.env.userName,
     password: process.env.passWord,
   },
-  channels: ["channel here"],
+  channels: ["humantarg3t"],
 });
+
 
 client.connect();
 let wordBlock = true;
 let timeBlock = false;
 let wordCount = 0;
 
+
+
 client.on("message", (channel, tags, message, self) => {
-  let timer = Math.floor(Math.random() * (15000 - 2000) + 2000);
+  let timer = Math.floor(Math.random() * (31000 - 30000) + 30000);
+  let trimmaTimer = (timer/1000).toPrecision(2)
   // Ignore echoed messages.
   if (self) return;
   if (message === "KEKW" && wordBlock) {
@@ -36,13 +40,11 @@ client.on("message", (channel, tags, message, self) => {
           return console.log(er);
         }
         console.log("TIME BLOCK NOW");
-        console.log(`Waiting ${timer} sec`);
+        console.log(`Waiting ${trimmaTimer} sec`);
         setTimeout(() => {
           timeBlock = false;
           console.log("TIME BLOCK OVER");
         }, timer);
-
-        //sette en pause på 30 sek her
       });
     }
   }
