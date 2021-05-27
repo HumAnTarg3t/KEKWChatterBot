@@ -1089,6 +1089,4 @@ If you want more, DM me :)
 `,
 ];
 
-console.log(story.join(' ').split(' ').length);
-
 module.exports = story;
