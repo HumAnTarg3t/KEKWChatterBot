@@ -16,6 +16,7 @@
   "license": "MIT",
   "dependencies": {
     "dotenv": "^10.0.0",
+    "readline-sync": "^1.4.10",
     "tmi.js": "^1.8.3"
   },
   "devDependencies": {
