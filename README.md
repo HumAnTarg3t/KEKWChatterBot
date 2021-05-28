@@ -30,6 +30,7 @@ The default triggers are `KEKW` will type 1 word of the story to chat --> gets a
      * Node.js
      * TMI.js
      * dotenv
+     * readline-sync
 
 
  
@@ -46,6 +47,8 @@ The default triggers are `KEKW` will type 1 word of the story to chat --> gets a
 ## Features
 * Deployed:
      * [X] Single chat teller
+     * [X] Added multiple emotes for triggering
+     * [X] Continue you story if interupted
 
 * In development:
      * [ ] Multiple chat teller.
@@ -54,7 +57,7 @@ The default triggers are `KEKW` will type 1 word of the story to chat --> gets a
 
  
 ## Issues
-It's perfect:) (Havent tested it)
+It's perfect:) (heh..)
  
  
 ## Status
