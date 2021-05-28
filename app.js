@@ -1,6 +1,7 @@
 const tmi = require("tmi.js");
 const story = require("./story");
 const fs = require("fs");
+let readlineSync = require("readline-sync");
 require("dotenv").config();
 
 const storyEdited = story.join(" ").split(" ");
@@ -11,27 +12,30 @@ const client = new tmi.Client({
     username: process.env.userName,
     password: process.env.passWord,
   },
-  channels: ["humantarg3t"],
+  channels: ["channel-here"],
 });
-
+const emoteBlock = ["forsenE", "Kappa", "KEKW", "OMEGALUL"];
+const emoteUnblock = ["LUL", "xqcL", "DansGame", "PogChamp"];
 
 client.connect();
 let wordBlock = true;
 let timeBlock = false;
-let wordCount = 0;
-
-
+let testCount = readlineSync.question(
+  "On what wordCount did you stop?(check wordCount.txt)"
+);
+let wordCount = testCount;
 
 client.on("message", (channel, tags, message, self) => {
+  //Adjust the timer here --> (MAX ms- MIN ms) + MIN ms
   let timer = Math.floor(Math.random() * (31000 - 30000) + 30000);
-  let trimmaTimer = (timer/1000).toPrecision(2)
+  let trimmaTimer = (timer / 1000).toPrecision(2);
   // Ignore echoed messages.
   if (self) return;
-  if (message === "KEKW" && wordBlock) {
+  if (emoteBlock.includes(message) && wordBlock) {
     if (!timeBlock) {
       client.say(channel, storyEdited[wordCount]);
       console.log(storyEdited[wordCount]);
-      wordCount += 1;
+      wordCount++;
       wordBlock = false;
       console.log("WORD BLOCK NOW");
       timeBlock = true;
@@ -40,7 +44,7 @@ client.on("message", (channel, tags, message, self) => {
           return console.log(er);
         }
         console.log("TIME BLOCK NOW");
-        console.log(`Waiting ${trimmaTimer} sec`);
+        console.log(`WAITING ${trimmaTimer} SEC`);
         setTimeout(() => {
           timeBlock = false;
           console.log("TIME BLOCK OVER");
@@ -48,7 +52,7 @@ client.on("message", (channel, tags, message, self) => {
       });
     }
   }
-  if (message === "LUL") {
+  if (emoteUnblock.includes(message)) {
     wordBlock = true;
     console.log(`WORD BLOCK OVER`);
   }
