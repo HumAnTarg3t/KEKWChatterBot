@@ -26,7 +26,7 @@ let testCount = readlineSync.question(
 let wordCount = testCount;
 
 client.on("message", (channel, tags, message, self) => {
-  //Adjust the timer here --> (MAX ms- MIN ms) + MIN ms
+  //Adjust the timer here --> (MAX ms - MIN ms) + MIN ms
   let timer = Math.floor(Math.random() * (31000 - 30000) + 30000);
   let trimmaTimer = (timer / 1000).toPrecision(2);
   // Ignore echoed messages.
