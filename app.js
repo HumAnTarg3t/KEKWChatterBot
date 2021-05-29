@@ -24,7 +24,7 @@ let wordBlock = true;
 let timeBlock = false;
 console.log(`Last wordCount: ${wordStatus}`);
 let testCount = readlineSync.question(
-  `On what wordCount did you stop?(check wordCount.txt)`
+  `On what wordCount did you stop?`
 );
 let wordCount = testCount;
 
