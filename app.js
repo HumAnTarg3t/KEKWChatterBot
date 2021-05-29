@@ -3,11 +3,12 @@ const story = require("./story");
 const fs = require("fs");
 let readlineSync = require("readline-sync");
 require("dotenv").config();
-let twitchChannel = readlineSync.question(
-  `What twitch channel?`
-);
 
+let twitchChannel = readlineSync.question(`What twitch channel?`);
+const wordStatus = fs.readFileSync("./wordCount.txt", "utf-8");
 const storyEdited = story.join(" ").split(" ");
+const emoteBlock = ["forsenE", "Kappa", "KEKW", "OMEGALUL"];
+const emoteUnblock = ["LUL", "xqcL", "DansGame", "PogChamp"];
 
 const client = new tmi.Client({
   options: { debug: true },
@@ -17,12 +18,11 @@ const client = new tmi.Client({
   },
   channels: [twitchChannel],
 });
-const emoteBlock = ["forsenE", "Kappa", "KEKW", "OMEGALUL"];
-const emoteUnblock = ["LUL", "xqcL", "DansGame", "PogChamp"];
 
 client.connect();
 let wordBlock = true;
 let timeBlock = false;
+console.log(`Last wordCount: ${wordStatus}`);
 let testCount = readlineSync.question(
   `On what wordCount did you stop?(check wordCount.txt)`
 );
@@ -58,5 +58,8 @@ client.on("message", (channel, tags, message, self) => {
   if (emoteUnblock.includes(message)) {
     wordBlock = true;
     console.log(`WORD BLOCK OVER`);
+  }
+  if (message === "wordstatus" && wordBlock && !timeBlock) {
+    client.say(channel, wordStatus);
   }
 });
