@@ -3,6 +3,9 @@ const story = require("./story");
 const fs = require("fs");
 let readlineSync = require("readline-sync");
 require("dotenv").config();
+let twitchChannel = readlineSync.question(
+  `What twitch channel?`
+);
 
 const storyEdited = story.join(" ").split(" ");
 
@@ -12,7 +15,7 @@ const client = new tmi.Client({
     username: process.env.userName,
     password: process.env.passWord,
   },
-  channels: ["channel-here"],
+  channels: [twitchChannel],
 });
 const emoteBlock = ["forsenE", "Kappa", "KEKW", "OMEGALUL"];
 const emoteUnblock = ["LUL", "xqcL", "DansGame", "PogChamp"];
@@ -21,7 +24,7 @@ client.connect();
 let wordBlock = true;
 let timeBlock = false;
 let testCount = readlineSync.question(
-  "On what wordCount did you stop?(check wordCount.txt)"
+  `On what wordCount did you stop?(check wordCount.txt)`
 );
 let wordCount = testCount;
 

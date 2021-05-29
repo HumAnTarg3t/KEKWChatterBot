@@ -58,6 +58,7 @@ The default triggers are `KEKW` will type 1 word of the story to chat --> gets a
  
 ## Issues
 It's perfect:) (heh..)
+The app only has 1 memory storage, so if you want to tell a story to different channels from different wordCounts, you need to manage that yourself.
  
  
 ## Status
